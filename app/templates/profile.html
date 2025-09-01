@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+Редактирование профиля
+{% endblock %}
+
+{% block content %}
+<h1>Редактирование профиля</h1>
+ <!-- old <form method="post" class="shadow p-4 rounded">сайта -->
+<form method="post" action="{{ url_for('profile') }}" >
+            {{ form.hidden_tag() }}
+            <div>
+                {{ form.username.label(class="form-label") }}
+                {{ form.username(class="form-control") }}
+            </div>
+            <div>
+                {{ form.email.label(class="form-label") }}
+                {{ form.email(class="form-control") }}
+            </div>
+            <div>
+                {{ form.password.label(class="form-label") }}
+                {{ form.password(class="form-control") }}
+            </div>
+            <div>
+                {{ form.confirm_password.label(class="form-label") }}
+                {{ form.confirm_password(class="form-control") }}
+            </div>
+            <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+</form>
+{% endblock %}
